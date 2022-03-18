@@ -17,9 +17,8 @@ cloudinary.config({
 });
 
 // updated for production purpose
-const port = process.env.PORT || 5000;
-app.listen(port,() => {
-    console.log(`server is working on http://localhost:${port}`);
+app.listen(process.env.PORT,() => {
+    console.log(`server is working on http://localhost:${process.env.PORT}`);
 });
 
 // console.log(youtube);
