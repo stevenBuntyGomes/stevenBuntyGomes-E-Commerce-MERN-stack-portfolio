@@ -16,8 +16,10 @@ cloudinary.config({
     api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
-app.listen(process.env.PORT,() => {
-    console.log(`server is working on http://localhost:${process.env.PORT}`);
+// updated for production purpose
+const port = process.env.PORT || 5000;
+app.listen(port,() => {
+    console.log(`server is working on http://localhost:${port}`);
 });
 
 // console.log(youtube);

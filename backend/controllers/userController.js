@@ -29,6 +29,7 @@ exports.registerUser = catchAsyncErrors(
         res.status(201).json({
             success: true,
             token,
+            user,
         });
     }
 );

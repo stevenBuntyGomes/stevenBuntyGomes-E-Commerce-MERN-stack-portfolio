@@ -16,7 +16,18 @@ function MyOrders() {
   const dispatch = useDispatch();
   const alert = useAlert();
   const { user } = useSelector((state) => state.user);
-  const { loading, error, order } = useSelector((state) => state.myOrders);
+  const { loading, error, orders } = useSelector((state) => state.myOrders);
+
+  
+  useEffect(() => {
+    if(error) {
+      alert.error(error);
+      dispatch(clearErrors());
+    }
+
+    dispatch(myOrders());
+  }, [dispatch, alert, error]);
+
 
   const columns = [
     {
@@ -67,7 +78,7 @@ function MyOrders() {
   ];
   const rows = [];
 
-  order && order
+  orders && orders
   .forEach((item, index) => {
     rows.push({
       itemsQty: item.orderItems.length,
@@ -77,14 +88,6 @@ function MyOrders() {
     });
   });
 
-  useEffect(() => {
-    if(error) {
-      alert.error(error);
-      dispatch(clearErrors());
-    }
-
-    dispatch(myOrders());
-  }, [dispatch, alert, error]);
   return (
     <Fragment>
       <MetaData title = {`${user.name} - Orders`}/>

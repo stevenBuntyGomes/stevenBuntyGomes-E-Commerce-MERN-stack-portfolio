@@ -2,10 +2,11 @@ const mongoose = require('mongoose');
 // const bodyParser = require('body-parser');
 
 const connect_database = () => {
-    mongoose.connect(process.env.DB_URL, {
+    // updated for production purpose
+    mongoose.connect(process.env.DB_URI, {
         useNewUrlParser: true,
         // useCreateIndex: true,
-        // useUnifiedTopology: true,
+        // useUnifiedTopology: true
     }).then((data) => {
         console.log(`MongoDB connected with: ${data.connection.host}`);
     })

@@ -19,7 +19,7 @@ function LoginSignup() {
     const switcherTab = useRef(null);
     const [loginEmail, setLoginEmail] = useState();
     const [loginPassword, setLoginPassword] = useState();
-    const { error, loading, isAuthenticated } = useSelector((state) => state.user);
+    const { error, loading, isAuthenticated, success: userResisterSuccess } = useSelector((state) => state.user);
     const [user, setUser] = useState({
         name: "",
         email: "",
@@ -71,10 +71,14 @@ function LoginSignup() {
             alert.error(error);
             dispatch(clearErrors());
         }
+
+        if(userResisterSuccess){
+            alert.success("user has been registered successfully. Now Log In");
+        }
         if(isAuthenticated) {
             history(redirect);
         }
-    }, [dispatch, error, alert, history, isAuthenticated]);
+    }, [dispatch, error, alert, history, isAuthenticated, userResisterSuccess]);
 
     const switchTabs = (e, tab) => {
         if(tab === "Login"){

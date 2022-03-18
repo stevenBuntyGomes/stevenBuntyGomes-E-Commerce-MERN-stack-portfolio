@@ -88,7 +88,7 @@ function Header() {
         },
     ];
 
-    if(isAuthenticated){
+    if(isAuthenticated && user){
         if(user.role === "admin"){
             loggedItems.unshift({
                 title: 'Dashboard',
