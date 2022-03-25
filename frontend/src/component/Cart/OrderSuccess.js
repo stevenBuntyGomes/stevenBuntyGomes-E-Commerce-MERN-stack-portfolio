@@ -9,8 +9,7 @@ function OrderSuccess() {
   const history = useNavigate();
   const redirect = (e) => {
     e.preventDefault();
-    window.location.reload(false);
-    history(`/account`);
+    history(`/my/orders`);
   }
 
   useEffect(() => {
