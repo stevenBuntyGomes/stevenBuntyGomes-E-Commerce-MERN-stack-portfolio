@@ -87,7 +87,7 @@ function ProductDetail() {
                     <MetaData title = {`${product.name} -- Ecommerce`}/>
                     <div className = "ProductDetails">
                     <div>
-                            <Carousel>
+                            <Carousel className='carousel-show'>
                                 {product.images && 
                                     product.images.map((item, i) => (
                                         <img className = "CarouselImage"

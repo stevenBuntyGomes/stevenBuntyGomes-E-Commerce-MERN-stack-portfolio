@@ -25,6 +25,12 @@
 .CarouselImage {
   width: 20vmax;
 }
+/* .makeStyles-root-16{
+  overflow: visible!important;
+} */
+.carousel-show{
+  overflow: visible!important;
+}
 
 .detailsBlock-1 > h2 {
   color: rgb(54, 54, 54);

@@ -37,6 +37,15 @@ function LoginSignup() {
         dispatch(login(loginEmail, loginPassword));
     }
 
+    const logInWithAdminHandler = (e) => {
+        e.preventDefault();
+        dispatch(login("stevengomes@gmail.com", "12345678"));
+    }
+    const logInWithAdminHandler2 = (e) => {
+        e.preventDefault();
+        dispatch(login("testnextjs@gmail.com", "12345678"));
+    }
+
     const registerSubmit = (e) => {
         e.preventDefault();
         const myForm = new FormData();
@@ -134,6 +143,8 @@ function LoginSignup() {
                             </div>
                             <Link to = "/password/forgot"> Forgot Password ? </Link>
                             <input type = "submit" value = "Login" className = "loginBtn"/>
+                            <button className = "loginBtn" onClick = {logInWithAdminHandler}>Login With Admin</button>
+                            <button className = "loginBtn" onClick = {logInWithAdminHandler2}>Login With User</button>
                         </form>
                         <form 
                             className = "signUpForm" 
