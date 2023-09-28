@@ -24,8 +24,10 @@ function NewProduct() {
   const [description, setDescription] = useState("");
   const [category, setCategory] = useState("");
   const [Stock, setStock] = useState(0);
+  // view images of blogs starts
   const [images, setImages] = useState([]);
   const [imagesPreview, setImagesPreview] = useState([]);
+  
 
 
   const { loading, error, success } = useSelector((state) => state.newProduct);
